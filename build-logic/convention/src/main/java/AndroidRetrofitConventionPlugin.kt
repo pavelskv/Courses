@@ -8,11 +8,9 @@ class AndroidRetrofitConventionPlugin : Plugin<Project> {
         with(target) {
             dependencies {
                 add("implementation", libs.findLibrary("retrofit.core").get())
-                add("implementation", libs.findLibrary("retrofit.converter.scalars").get())
                 add("implementation", libs.findLibrary("retrofit.converter.gson").get())
                 add("implementation", libs.findLibrary("okhttp.logging").get())
                 add("implementation", libs.findLibrary("okhttp.core").get())
-                add("implementation", libs.findLibrary("gson").get())
             }
         }
     }
