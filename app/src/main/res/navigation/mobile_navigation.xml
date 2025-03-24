@@ -3,6 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.shechkov.feature.home.presentation.HomeFragment" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.shechkov.feature.favorites.FavoritesFragment" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.shechkov.feature.account.AccountFragment" />
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.shechkov.feature.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment" />
 
 </navigation>
