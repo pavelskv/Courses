@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/background_item_course"
+    android:paddingBottom="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/course_image_view"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize12" />
+
+    <TextView
+        android:id="@+id/course_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white_2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_image_view"
+        tools:text="Java-разработчик с нуля" />
+
+    <TextView
+        android:id="@+id/course_description_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="2"
+        android:textColor="@color/white_2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_title_text_view"
+        tools:text="Освойте backend-разработку  и программирование на Java, фреймворки Spring и Maven, работу с базами данных и API. Создайте свой собственный проект, собрав портфолио и став востребованным специалистом для любой IT компании." />
+
+    <TextView
+        android:id="@+id/course_price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white_2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_description_text_view"
+        tools:text="999 Р" />
+
+    <TextView
+        android:id="@+id/rate_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_text_view_info"
+        android:drawableStart="@drawable/ic_star_fill"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:includeFontPadding="false"
+        android:text="4.9"
+        android:textColor="@color/white_2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/course_image_view"
+        app:layout_constraintStart_toStartOf="@id/course_image_view" />
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_text_view_info"
+        android:fontFamily="@font/roboto_regular"
+        android:includeFontPadding="false"
+        android:text="22 Мая 2024"
+        android:textColor="@color/white_2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/course_image_view"
+        app:layout_constraintStart_toEndOf="@id/rate_text_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/favorite_button"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:textColor="@color/white_2"
+        app:backgroundTint="@color/dark_gray"
+        app:cornerRadius="28dp"
+        app:icon="@drawable/ic_bookmark"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="@id/course_image_view"
+        app:layout_constraintTop_toTopOf="@id/course_image_view" />
+
+    <Button
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:minHeight="0dp"
+        android:text="@string/core_ui_more"
+        android:textColor="@color/green"
+        app:icon="@drawable/ic_arrow_right"
+        app:iconGravity="textEnd"
+        app:iconSize="12dp"
+        app:iconTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="@id/course_price_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/course_price_text_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
