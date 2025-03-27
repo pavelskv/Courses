@@ -11,12 +11,13 @@ import android.view.LayoutInflater
 import android.view.View.OnClickListener
 import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
+import androidx.core.widget.doAfterTextChanged
 import com.shechkov.core.ui.databinding.ViewEditTextWithLabelBinding
 
 class EditTextWithLabel @JvmOverloads constructor(
     context: Context,
     private val attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     private val binding: ViewEditTextWithLabelBinding = ViewEditTextWithLabelBinding.inflate(
@@ -98,10 +99,13 @@ class EditTextWithLabel @JvmOverloads constructor(
 
     private var editTextChangeListener = ArrayList<TextWatcher>()
 
-    fun addListener(action: (String) -> Unit) {
-        editTextChangeListener.add(EditTextChangeListener(action))
-        binding.editText.addTextChangedListener(editTextChangeListener[0])
+    fun addListener(action: (text: Editable?) -> Unit) {
+        //editTextChangeListener.add(EditTextChangeListener(action))
+        // binding.editText.addTextChangedListener(editTextChangeListener[0])
+
+        binding.editText.doAfterTextChanged(action)
     }
+
 
     fun removeListener() {
         if (editTextChangeListener.isEmpty())
