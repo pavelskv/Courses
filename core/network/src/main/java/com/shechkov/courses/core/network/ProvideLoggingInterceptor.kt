@@ -16,7 +16,7 @@ interface ProvideLoggingInterceptor {
     }
 
     class Base : Abstract(HttpLoggingInterceptor.Level.NONE) {
-        private val loggingInterceptor = if (BuildConfig.DEBUG) Debug() else Release()
+        private val loggingInterceptor = Debug()
 
         override fun interceptor() = loggingInterceptor.interceptor()
     }
