@@ -29,7 +29,8 @@ class AccountFragment : BaseFragment<AccountViewModel, FragmentAccountBinding>(
             CourseDiffCallback(),
             accountActionsDelegate(viewModel),
             titleDelegate(),
-            myCourseAdapterDelegate(viewModel)
+            myCourseAdapterDelegate(viewModel),
+            progressAdapterDelegate()
         )
 
         binding.accountListView.apply {
@@ -41,6 +42,10 @@ class AccountFragment : BaseFragment<AccountViewModel, FragmentAccountBinding>(
             accountAdapter.items = it
         }
 
-        viewModel.fetchAccount()
+        viewModel.observeUpdateFavorites(viewLifecycleOwner){
+            viewModel.fetchAccount()
+        }
+
+        viewModel.init()
     }
 }

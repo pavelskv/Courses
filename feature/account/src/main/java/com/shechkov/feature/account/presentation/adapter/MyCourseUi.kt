@@ -7,4 +7,7 @@ data class MyCourseUi(
     val hasLike: Boolean, val date: String,
     val allLessonsAndCompletedCount: String, val completionPercent: String,
     val progress: Int
-) : ItemUi
+) : ItemUi {
+    override fun id() = id
+    override fun content(): Any = hasLike
+}

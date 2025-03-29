@@ -15,8 +15,11 @@ dependencies {
 
     implementation(project(":core:presentation"))
     implementation(project(":core:domain"))
+    implementation(project(":core:navigation"))
 
     implementation(libs.adapterdelegates)
     implementation(libs.adapterdelegates.viewbinding)
+
+    implementation(libs.cicerone)
 
 }
