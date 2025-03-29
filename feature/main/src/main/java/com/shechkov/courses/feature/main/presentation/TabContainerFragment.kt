@@ -37,7 +37,6 @@ class TabContainerFragment : BaseFragment<TabContainerViewModel, FragmentTabCont
         super.onViewCreated(view, savedInstanceState)
         if (childFragmentManager.findFragmentById(R.id.container) == null) {
             viewModel.initScreen(router, containerName)
-            // router.replaceScreen(screenTabProvider.getScreen(containerTab))
         }
     }
 
