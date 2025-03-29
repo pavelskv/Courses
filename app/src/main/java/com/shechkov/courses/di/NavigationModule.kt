@@ -1,7 +1,6 @@
 package com.shechkov.courses.di
 
 import com.github.terrakok.cicerone.Screen
-import com.shechkov.core.presentation.NavigationCommunication
 import com.shechkov.courses.core.navigation.ScreensProvider
 import com.shechkov.courses.feature.main.presentation.BottomTabScreenProvider
 import com.shechkov.courses.presentation.Screens
@@ -14,11 +13,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NavigationModule {
-
-    @Provides
-    @Singleton
-    fun provideNavigationCommunication(): NavigationCommunication =
-        NavigationCommunication.Base()
 
     @Provides
     fun provideLoginScreen(): ScreensProvider.Login = ScreensProvider.Login(Screens.Login())
