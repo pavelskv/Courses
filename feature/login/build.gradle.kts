@@ -12,6 +12,10 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(libs.cicerone)
+
     implementation(project(":core:presentation"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:domain"))
 
 }

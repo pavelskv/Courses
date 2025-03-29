@@ -35,6 +35,10 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>(
             socialOkButton.setOnClickListener {
                 viewModel.openSocialOK()
             }
+
+            loginButton.setOnClickListener {
+                viewModel.login()
+            }
         }
 
         viewModel.observeLoginUiState(viewLifecycleOwner) {
