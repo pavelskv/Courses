@@ -1,10 +1,9 @@
-package com.shechkov.courses.core.network.di
+package com.shechkov.courses.di
 
 import com.shechkov.courses.core.network.ProvideConverterFactory
 import com.shechkov.courses.core.network.ProvideLoggingInterceptor
 import com.shechkov.courses.core.network.ProvideOkHttpClientBuilder
-import com.shechkov.courses.core.network.ProvideRetrofitBuilder
-import dagger.Binds
+import com.shechkov.courses.core.network.ProvideRetrofit
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,11 +17,16 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofitBuilder(
+    fun provideRetrofit(provideRetrofit: ProvideRetrofit): Retrofit =
+        provideRetrofit.retrofit()
+
+    @Provides
+    @Singleton
+    fun provideRetrofitProvider(
         provideConverterFactory: ProvideConverterFactory,
         okHttpClientBuilder: ProvideOkHttpClientBuilder
-    ): ProvideRetrofitBuilder =
-        ProvideRetrofitBuilder.Base(provideConverterFactory, okHttpClientBuilder)
+    ): ProvideRetrofit =
+        ProvideRetrofit.Base(provideConverterFactory, okHttpClientBuilder)
 
     @Provides
     @Singleton

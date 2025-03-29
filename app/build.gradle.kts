@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.courses.android.application)
+    alias(libs.plugins.courses.hilt)
+    alias(libs.plugins.courses.android.retrofit)
 }
 
 android {
@@ -33,17 +35,26 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(libs.androidx.activity.ktx)
+
+    implementation(project(":core:network"))
+    implementation(project(":core:presentation"))
     implementation(project(":core:ui"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:preferences"))
+
+    implementation(project(":feature:main"))
     implementation(project(":feature:home"))
     implementation(project(":feature:account"))
     implementation(project(":feature:favorites"))
     implementation(project(":feature:login"))
     implementation(project(":feature:onboarding"))
 
-    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+
+    implementation(libs.cicerone)
 
 }
