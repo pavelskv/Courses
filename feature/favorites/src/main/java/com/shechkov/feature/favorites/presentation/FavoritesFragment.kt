@@ -10,6 +10,7 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.shechkov.core.presentation.BaseFragment
 import com.shechkov.core.presentation.courses.CourseUi
 import com.shechkov.core.presentation.adapter.ItemUi
+import com.shechkov.core.presentation.adapter.emptyDelegate
 import com.shechkov.core.presentation.adapter.progressAdapterDelegate
 import com.shechkov.core.presentation.courses.CourseDiffCallback
 import com.shechkov.core.presentation.courses.courseAdapterDelegate
@@ -27,7 +28,8 @@ class FavoritesFragment : BaseFragment<FavoritesViewModel, FragmentFavoritesBind
 
         val coursesAdapter = AsyncListDifferDelegationAdapter<ItemUi>(
             CourseDiffCallback(),
-            courseAdapterDelegate(viewModel)
+            courseAdapterDelegate(viewModel),
+            emptyDelegate()
         )
 
         binding.coursesListView.apply {

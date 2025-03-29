@@ -4,6 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.shechkov.core.presentation.adapter.EmptyUi
 import com.shechkov.core.presentation.adapter.ItemUi
 import com.shechkov.core.presentation.courses.ChangeFavorite
 import com.shechkov.core.presentation.courses.ObserveUpdateFavorites
@@ -28,7 +29,7 @@ class FavoritesViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val courses = coursesInteractor.favorites()
             withContext(Dispatchers.Main) {
-                val coursesUi = courses.map(coursesDomainToUiMapper)
+                val coursesUi = courses.map(coursesDomainToUiMapper).ifEmpty { listOf(EmptyUi()) }
                 favoritesCommunication.setValue(coursesUi)
             }
         }
