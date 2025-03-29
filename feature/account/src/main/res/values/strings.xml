@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_account_profile">Профиль</string>
+    <string name="feature_account_support">Написать в поддержку</string>
+    <string name="feature_account_settings">Настройки</string>
+    <string name="feature_account_logout">Выйти из аккаунта</string>
+</resources>
