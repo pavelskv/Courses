@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.shechkov.core.presentation.BaseFragment
 import com.shechkov.core.presentation.courses.CourseUi
 import com.shechkov.core.presentation.adapter.ItemUi
+import com.shechkov.core.presentation.adapter.progressAdapterDelegate
+import com.shechkov.core.presentation.courses.CourseDiffCallback
 import com.shechkov.core.presentation.courses.courseAdapterDelegate
 import com.shechkov.feature.favorites.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +25,8 @@ class FavoritesFragment : BaseFragment<FavoritesViewModel, FragmentFavoritesBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val coursesAdapter = ListDelegationAdapter<List<ItemUi>>(
+        val coursesAdapter = AsyncListDifferDelegationAdapter<ItemUi>(
+            CourseDiffCallback(),
             courseAdapterDelegate(viewModel)
         )
 
@@ -33,7 +37,10 @@ class FavoritesFragment : BaseFragment<FavoritesViewModel, FragmentFavoritesBind
 
         viewModel.observe(viewLifecycleOwner) {
             coursesAdapter.items = it
-            coursesAdapter.notifyDataSetChanged()
+        }
+
+        viewModel.observeUpdateFavorites(viewLifecycleOwner) {
+            viewModel.fetchCourses()
         }
 
         viewModel.fetchCourses()
