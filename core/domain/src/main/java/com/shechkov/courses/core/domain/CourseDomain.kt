@@ -39,7 +39,7 @@ interface CourseDomain {
         private val rate: String,
         private val startDate: Long,
         private val hasLike: Boolean,
-        private val publishDate: Long,
+        private val publishDate: Long
     ) : CourseDomain {
         override fun <T> map(mapper: Mapper<T>): T =
             mapper.map(id, title, text, price, rate, startDate, hasLike, publishDate)

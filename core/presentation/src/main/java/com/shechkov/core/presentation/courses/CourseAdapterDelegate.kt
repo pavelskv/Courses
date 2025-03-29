@@ -20,8 +20,9 @@ fun courseAdapterDelegate(
             binding.dateTextView.text = item.date
             binding.rateTextView.text = item.rate
 
-            binding.favoriteButton.setIconResource(if (item.hasLike) R.drawable.ic_bookmark_fill else R.drawable.ic_bookmark)
+            binding.courseImageView.setImageResource(item.imageResId)
 
+            binding.favoriteButton.setIconResource(if (item.hasLike) R.drawable.ic_bookmark_fill else R.drawable.ic_bookmark)
             binding.favoriteButton.setOnClickListener {
                 changeFavorite.changeFavorite(item.id)
             }

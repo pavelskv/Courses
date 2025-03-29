@@ -5,4 +5,6 @@ import androidx.annotation.StringRes
 class TitleUi(
     @StringRes
     val title: Int,
-) : ItemUi
+) : ItemUi {
+    override fun id() = title
+}
