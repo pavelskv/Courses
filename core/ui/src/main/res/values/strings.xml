@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="core_ui_home">Главная</string>
+    <string name="core_ui_favorites">Избранное</string>
+    <string name="core_ui_account">Аккаунт</string>
+
+    <string name="core_ui_login">Вход</string>
+    <string name="core_ui_more">Подробнее</string>
+    <string name="core_ui_my_courses">Мои курсы</string>
+    <string name="core_ui_empty">Вы еще ничего не добавили</string>
+    <string name="core_ui_error">Произошла ошибка при загрузке данных</string>
+</resources>
