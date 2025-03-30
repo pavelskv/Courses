@@ -19,3 +19,13 @@
 - MVVM
 - Multimodules
 
+
+**Скриншоты**
+
+| Логин | Главный экран |
+|--|--|
+| ![alt text](screenshots/courses_screen_1.jpeg) | ![alt text](screenshots/courses_screen_1.jpeg) |
+| Избранное | Аккаунт |
+| ![alt text](screenshots/courses_screen_1.jpeg) | ![alt text](screenshots/courses_screen_1.jpeg) |
+
+
