@@ -52,17 +52,6 @@ class TabContainerFragment : BaseFragment<TabContainerViewModel, FragmentTabCont
 
     override val viewModel: TabContainerViewModel by viewModels()
 
-//    override fun onBackPressed(): Boolean {
-//        val fragment = childFragmentManager.findFragmentById(R.id.ftc_container)
-//        return if (fragment != null && fragment is BackButtonListener
-//                && (fragment as BackButtonListener).onBackPressed()) {
-//            true
-//        } else {
-//            (activity as RouterProvider?)!!.router.exit()
-//            true
-//        }
-//    }
-
     companion object {
         private const val EXTRA_NAME = "tcf_extra_name"
 

@@ -35,6 +35,7 @@ class AccountFragment : BaseFragment<AccountViewModel, FragmentAccountBinding>(
 
         binding.accountListView.apply {
             layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
             adapter = accountAdapter
         }
 

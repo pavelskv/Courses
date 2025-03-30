@@ -1,13 +1,8 @@
 pluginManagement {
     includeBuild("build-logic")
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
+        maven { url = uri("https://jitpack.io") }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -28,3 +23,12 @@ include(":feature:home")
 include(":feature:favorites")
 include(":feature:account")
 include(":core:presentation")
+include(":core:common")
+include(":core:ui")
+include(":core:network")
+include(":core:database")
+include(":core:data")
+include(":core:domain")
+include(":core:navigation")
+include(":feature:main")
+include(":core:preferences")
